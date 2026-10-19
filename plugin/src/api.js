@@ -94,7 +94,15 @@ class PeerSocket {
     await new Promise((resolve, reject) => {
       const timer = setTimeout(() => {
         target.waiters.delete(done);
-        reject(jamError("Couldn't reach this Jam. Check the code, and that the host has Spotify open with JamRoom.", 'offline'));
+        const net = target.room.status?.();
+        reject(
+          jamError(
+            net && !net.brokers
+              ? "Couldn't reach the services JamRoom uses to connect friends. A firewall, VPN or antivirus may be blocking them."
+              : "Couldn't reach this Jam. Check the code, and that the host has Spotify open with the latest JamRoom (you both need it).",
+            'offline',
+          ),
+        );
       }, FIND_HOST_MS);
       const done = () => {
         clearTimeout(timer);

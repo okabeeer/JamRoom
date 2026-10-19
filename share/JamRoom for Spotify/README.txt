@@ -24,6 +24,8 @@ Jam together
 - One person types their name and clicks "Start a Jam", then sends the 6-letter code.
 - Everyone else types their name, enters the code under "or join a friend", and clicks Join.
 - Click "Listen along" to hear the Jam on your computer.
+- Can't join? Make sure you BOTH have this version (1.0.1+): it connects even on strict
+  networks (4G/5G routers) through an encrypted fallback.
 - Add songs: right-click any Spotify song > "Add to Jam queue", or use the panel's
   Link tab (Spotify, YouTube, SoundCloud or audio links) or Upload tab (your files).
 

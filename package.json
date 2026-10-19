@@ -1,6 +1,6 @@
 {
   "name": "jamroom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Listen together inside Spotify (Spicetify extension) with songs from Spotify, YouTube, SoundCloud, links and files; also a standalone web app.",
   "license": "MIT",

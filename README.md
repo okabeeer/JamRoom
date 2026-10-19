@@ -66,8 +66,9 @@ type it under "or join a friend". Everyone needs Spotify desktop with JamRoom.
 ## Good to know
 
 - **The host's Spotify must stay open.** If it closes, the Jam pauses for everyone until it's back.
-- **Some networks block direct connections** (strict corporate or mobile networks). Those would
-  need a TURN relay, which this version doesn't configure.
+- **Strict networks still work.** When two networks won't allow a direct connection (common with
+  4G/5G home routers), JamRoom switches to its encrypted fallback by itself (see below). Everyone
+  needs JamRoom 1.0.1 or newer for that.
 - **Spotify songs need Spotify on every listener's computer.** Pausing or playing something else
   yourself in Spotify means you stop listening along; the panel says so.
 - **Profile menu empty on Spotify 1.3.5?** That comes from two Spicetify options, not JamRoom.
@@ -85,6 +86,13 @@ playlists, permissions and one player state (which song, playing or not, and the
 a timestamp, the same model as Spotify Connect). Friends send commands to the host over WebRTC;
 free public Nostr relays are only used to introduce them ([Trystero](https://github.com/dmotz/trystero)),
 after that everything goes friend to friend.
+
+Some networks never allow a direct connection (carrier-grade or "symmetric" NAT), and there are no
+free TURN relays left. For those, every Jam also opens an end-to-end encrypted fallback through free
+public MQTT brokers (HiveMQ, Mosquitto, EMQX; `plugin/src/relay.js`). The topic and AES-GCM key
+come from the Jam code through PBKDF2, so the brokers see only ciphertext. A friend counts as
+joined as soon as either path reaches them, and messages switch to the direct path whenever it's
+open.
 
 Each listener:
 
