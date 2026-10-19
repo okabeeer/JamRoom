@@ -1,0 +1,22 @@
+{
+  "name": "JamRoom",
+  "description": "Listen together like Spotify Jam, with songs from Spotify, YouTube, SoundCloud, links and your own files, peer to peer (no server). Includes a 3D CD shelf view with a CRT playing Canvas and synced lyrics.",
+  "preview": "docs/preview.png",
+  "main": "spicetify/jamroom.js",
+  "readme": "README.md",
+  "authors": [
+    {
+      "name": "okabeeer",
+      "url": "https://github.com/okabeeer"
+    }
+  ],
+  "tags": [
+    "jam",
+    "listen together",
+    "social",
+    "youtube",
+    "soundcloud",
+    "lyrics",
+    "discord"
+  ]
+}

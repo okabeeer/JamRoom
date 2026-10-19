@@ -1,0 +1,9 @@
+node_modules/
+client/dist/
+data/
+*.log
+
+# kept local, not published
+EVIDENCE.md
+share/*.zip
+share/JamRoom for Spotify/jamroom.js
